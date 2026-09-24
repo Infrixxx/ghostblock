@@ -42,13 +42,13 @@ Ghost Block uses an embedded SQLite database (`data/ghostblock.sqlite`) with Wri
 
 * **`scans`**: Tracks high-level scan sessions, target disk paths, block counts, and execution states (`PENDING`, `RUNNING`, `COMPLETED`, `FAILED`).
 * **`carved_blocks`**: Stores granular disk artifacts identified during parsing:
-* `physical_offset`: Byte position relative to disk origin.
-* `block_number`: Filesystem-level block index (`offset / blockSize`).
-* `inode_number`: Pointer to the owning metadata structure (if resolved from ext4 tables).
-* `file_type`: Detected MIME type or magic byte classification (e.g., `PDF`, `JPEG`, `TEXT`).
-* `entropy`: Shannon entropy score (0.0000 to 8.0000).
-* `is_deleted`: Boolean flag indicating if the block belongs to an unlinked inode or slack area.
-* `raw_hex_preview`: First 64 bytes of sector content encoded in hex for dashboard previews.
+    * `physical_offset`: Byte position relative to disk origin.
+    * `block_number`: Filesystem-level block index (`offset / blockSize`).
+    * `inode_number`: Pointer to the owning metadata structure (if resolved from ext4 tables).
+    * `file_type`: Detected MIME type or magic byte classification (e.g., `PDF`, `JPEG`, `TEXT`).
+    * `entropy`: Shannon entropy score (0.0000 to 8.0000).
+    * `is_deleted`: Boolean flag indicating if the block belongs to an unlinked inode or slack area.
+    * `raw_hex_preview`: First 64 bytes of sector content encoded in hex for dashboard previews.
 
 
 
