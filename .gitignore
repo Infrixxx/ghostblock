@@ -1,0 +1,25 @@
+# Forensic and disk image artifacts
+data/*.img
+data/*.dd
+data/*.raw
+
+# Database runtime files
+data/*.sqlite
+data/*.sqlite-journal
+data/*.sqlite-wal
+data/*.sqlite-shm
+
+# Rust build artifacts
+scanner-core/target/
+
+# Java build artifacts
+api-gateway/target/
+*.class
+
+# Node / React artifacts
+dashboard/node_modules/
+dashboard/dist/
+
+# System and IDE
+.DS_Store
+*.log
