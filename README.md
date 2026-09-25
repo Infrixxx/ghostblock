@@ -84,3 +84,21 @@ The API service is built in **Java (Spring Boot 3)** to manage scan processes an
 ```bash
 cd api-gateway
 mvn spring-boot:run
+
+```
+---
+
+## Visualization Dashboard (`dashboard/`)
+
+Built with **React and Vite**, the dashboard renders low-level disk sector telemetry:
+
+- **Carved Sector Table**: Displays physical offsets, block indices, and deletion status.
+- **Shannon Entropy Bar**: Visualizes score ($0.0 - 8.0$) with an interactive interval reference modal.
+- **Hex Editor View**: Dual-column hexadecimal and ASCII representation classifying printable characters, zeroed slack space, and high-density binary data.
+
+### Launching the Dashboard
+```bash
+cd dashboard
+npm install
+npm run dev
+
