@@ -118,3 +118,5 @@ sqlite3 data/ghostblock.sqlite "DELETE FROM scans; DELETE FROM sqlite_sequence W
 # To reclaim unallocated disk space and optimize page layouts after purging records:
 
 sqlite3 data/ghostblock.sqlite "VACUUM;"
+
+WTC-RHGDRFZL
