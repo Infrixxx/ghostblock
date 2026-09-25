@@ -65,3 +65,22 @@ cargo build --release
 sqlite3 ../data/ghostblock.sqlite "SELECT COUNT(*) AS total_blocks, AVG(entropy) AS mean_entropy FROM carved_blocks;"
 
 ```
+---
+
+## API Gateway (`api-gateway/`)
+
+The API service is built in **Java (Spring Boot 3)** to manage scan processes and serve carved sector telemetry to client consumers.
+
+### REST Endpoints
+
+| Method | Endpoint | Description |
+| :--- | :--- | :--- |
+| `POST` | `/api/scan` | Spawns the Rust scanner subprocess against a designated disk image. |
+| `GET` | `/api/scans` | Returns metadata for all scan runs. |
+| `GET` | `/api/blocks` | Returns paginated blocks filtered by `scanId` and `deletedOnly`. |
+| `GET` | `/api/blocks/{id}/raw` | Seeks the raw disk image and streams an exact sector hex payload. |
+
+### Running the Service
+```bash
+cd api-gateway
+mvn spring-boot:run
