@@ -102,3 +102,19 @@ cd dashboard
 npm install
 npm run dev
 
+
+```
+---
+## Database Maintenance
+
+### To purge previous scan sessions and reset auto-incrementing record identifiers:
+
+
+```bash
+# Purge all scan sessions and cascading block records, resetting ID sequences
+sqlite3 data/ghostblock.sqlite "DELETE FROM scans; DELETE FROM sqlite_sequence WHERE name='scans';"
+
+
+# To reclaim unallocated disk space and optimize page layouts after purging records:
+
+sqlite3 data/ghostblock.sqlite "VACUUM;"
